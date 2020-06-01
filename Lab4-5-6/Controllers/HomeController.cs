@@ -1,6 +1,7 @@
 ﻿using Lab4_5_6.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,8 +17,7 @@ namespace Lab4_5_6.Controllers
         }
         public ActionResult Index()
         {
-            var upcommingCourses = _dbContext.Courses
-                .Include(c => c.Lecturer)
+            var upcommingCourses = _dbContext.Courses.Include(c=>c.Lecturer).Include(c=>c.Category)
                 .Include(c => c.Category)
                 .Where(c => c.DateTime > DateTime.Now);
 
