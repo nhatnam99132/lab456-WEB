@@ -8,7 +8,7 @@ namespace Lab4_5_6.ViewModels
 {
     public class CoursesViewModel
     {
-        public IEnumerable<Course> UpcomingCourses { get; set; }
+        public IEnumerable<Course> UpcomingCourses  { get; set; }
         public bool ShowAction { get; set; }
     }
 }
